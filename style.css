@@ -1,0 +1,227 @@
+/* RESET BÁSICO E CONFIGURAÇÕES GLOBAIS */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    background-color: #1a1a1a;
+    /* Fundo escuro sólido para o corpo da página */
+    min-height: 100vh;
+    /* Garante que a página tenha pelo menos uma tela de altura */
+}
+
+/* Estilo para o Mini Header */
+.mini-header {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 20;
+    position: sticky;
+    top: 0;
+}
+
+.mini-header p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para as imagens que rolam */
+.scrollable-image {
+    width: 100%;
+    height: auto;
+    /* Mantém a proporção da imagem, sem cortar lateralmente */
+    display: block;
+    margin-bottom: 0;
+    /* Mantenha 0 ou um valor pequeno para as fotos ficarem bem juntas */
+}
+
+/* Contêiner para o botão, posicionado entre as imagens */
+.button-interstitial-container {
+    position: relative;
+    /* ESSENCIAL: Serve como referência para o botão posicionado absolutamente */
+    width: 100%;
+    height: 120px;
+    /* Altura do espaço onde o botão vai "viver". Ajuste conforme necessário */
+    display: flex;
+    justify-content: center;
+    /* Centraliza o botão horizontalmente */
+    align-items: center;
+    /* Centraliza o botão verticalmente dentro deste contêiner */
+    background-color: transparent;
+    /* Transparente para as imagens aparecerem por baixo */
+    z-index: 5;
+    /* Garante que este contêiner e o botão fiquem acima das imagens */
+
+    /* Margens negativas para criar a sobreposição entre as imagens */
+    /* Ajuste esses valores para controlar QUANTO o botão se sobrepõe às imagens */
+    margin-top: -60px;
+    /* Puxa o contêiner para cima, sobrepondo a 'image3.jpeg' */
+    margin-bottom: -60px;
+    /* Puxa a 'image4.jpeg' para cima, sobrepondo este contêiner */
+
+    padding: 20px 0;
+    /* Padding interno para o botão não ficar colado nas bordas do contêiner */
+    box-sizing: border-box;
+}
+
+/* ESTILO DO BOTÃO DO WHATSAPP (AMARELO E ESTILOSO) */
+.whatsapp-button {
+    display: inline-block;
+    padding: 1.2rem 2.5rem;
+    background-color: #FFD700;
+    /* AMARELO DOURADO */
+    color: #333333;
+    /* Texto escuro para contraste */
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 16px rgba(255, 215, 0, 0.4);
+    /* Sombra amarela */
+    cursor: pointer;
+    border: none;
+    z-index: 10;
+    /* Garante que o botão fique acima de tudo */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.whatsapp-button:hover {
+    background-color: #FFC107;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.6);
+}
+
+.whatsapp-button:active {
+    background-color: #FFA000;
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.4);
+}
+
+/* Estilo para o Rodapé */
+.mini-footer {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #aaaaaa;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 20;
+    margin-top: 0;
+}
+
+.mini-footer p {
+    margin: 5px 0;
+}
+
+
+/* MEDIA QUERIES PARA RESPONSIVIDADE EM DIFERENTES TAMANHOS DE TELA */
+
+@media (max-width: 400px) {
+    .mini-header {
+        padding: 12px 8px;
+        font-size: 0.95rem;
+    }
+
+    .button-interstitial-container {
+        height: 100px;
+        margin-top: -50px;
+        margin-bottom: -50px;
+    }
+
+    .whatsapp-button {
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+    }
+
+    .mini-footer {
+        padding: 20px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .mini-header {
+        padding: 20px 15px;
+        font-size: 1.25rem;
+    }
+
+    .button-interstitial-container {
+        height: 140px;
+        /* Ajuste para telas maiores */
+        margin-top: -70px;
+        margin-bottom: -70px;
+    }
+
+    .whatsapp-button {
+        padding: 1.3rem 2.8rem;
+        font-size: 1.6rem;
+    }
+
+    .mini-footer {
+        padding: 30px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 901px) {
+    .mini-header {
+        padding: 25px 25px;
+        font-size: 1.4rem;
+    }
+
+    .button-interstitial-container {
+        height: 160px;
+        /* Ajuste para telas maiores */
+        margin-top: -80px;
+        margin-bottom: -80px;
+    }
+
+    .whatsapp-button {
+        padding: 1.5rem 3rem;
+        font-size: 1.8rem;
+    }
+
+    .mini-footer {
+        padding: 40px 30px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-height: 450px) and (orientation: landscape) {
+    .mini-header {
+        padding: 10px 5px;
+        font-size: 0.85rem;
+    }
+
+    .button-interstitial-container {
+        height: 80px;
+        /* Reduzir em modo paisagem */
+        margin-top: -40px;
+        margin-bottom: -40px;
+    }
+
+    .whatsapp-button {
+        padding: 0.8rem 1.8rem;
+        font-size: 1.1rem;
+    }
+
+    .mini-footer {
+        padding: 15px 10px;
+        font-size: 0.7rem;
+    }
+}
